@@ -3,6 +3,12 @@
 #include "switch.h"
 using namespace std;
 
+void refresh(string msg, int num)
+{
+	consoleClear();
+	cout << msg << endl << num;
+}
+
 int main()
 {
 	consoleInit(NULL);
@@ -20,14 +26,12 @@ int main()
 			if (kDown & KEY_UP)
 			{
 				num1 = num1 + 1;
-				consoleClear();
-				cout << msg << endl << num1;
+				refresh(msg, num1);
 			}
 			else if (kDown & KEY_DOWN)
 			{
 				num1 = num1 - 1;
-				consoleClear();
-				cout << msg << endl << num1;
+				refresh(msg, num1);
 			}
 		}
 		kDownOld = kDown;
